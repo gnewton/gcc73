@@ -1,5 +1,5 @@
 
-BASE := /home/gnewton/install/foobar2o
+BASE := /home/newtong/install/foobar2o
 GMPLIB := $(BASE)/lib/libgmp.so 
 MPFRLIB:= $(BASE)/lib/libmpfr.so
 MPCLIB:= $(BASE)/lib/libmpc.so
@@ -41,4 +41,4 @@ $(ISLLIB): gmp
 
 
 $(GCCBIN): gmp mpfr mpc isl
-	./download.sh gcc; cd download/gcc-7.3.0; ./configure --disable-multilib --prefix=$(BASE)/gcc --enable-languages=all --with-gmp=$(BASE) --with-mpfr=$(BASE) --with-mpc=$(BASE) --with-isl=$(BASE); unset LIBRARY_PATH CPATH C_INCLUDE_PATH PKG_CONFIG_PATH CPLUS_INCLUDE_PATH INCLUDE; export LD_LIBRARY_PATH=$BASE_PATH/lib; export LD_RUN_PATH=$BASE_PATH/lib; export C_INCLUDE_PATH=$BASE_PATH/include; make; make install
+	./download.sh gcc; cd download/gcc-7.3.0; ./configure --disable-multilib --prefix=$(BASE)/gcc --enable-languages=all --with-gmp=$(BASE) --with-mpfr=$(BASE) --with-mpc=$(BASE) --with-isl=$(BASE); unset LIBRARY_PATH CPATH C_INCLUDE_PATH PKG_CONFIG_PATH CPLUS_INCLUDE_PATH INCLUDE; export LD_LIBRARY_PATH=$(BASE)/lib; export LD_RUN_PATH=$(BASE)/lib; export C_INCLUDE_PATH=$(BASE)/include; make; make install
